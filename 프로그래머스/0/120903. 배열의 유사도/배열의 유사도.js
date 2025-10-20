@@ -1,4 +1,8 @@
 function solution(s1, s2) {
-    const answer = s1.filter(a => s2.includes(a));
-    return answer.length;
+    return s1.reduce((a, b) => {
+        if (s2.includes(b)) {
+            return a + 1;
+        }
+        return a;
+    }, 0);
 }
